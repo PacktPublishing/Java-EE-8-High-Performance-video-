@@ -1,0 +1,16 @@
+<html>
+<head>
+    <script type="text/javascript" src="jqplot/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $.getJSON( "api/dashboard/total-sales", function(result) {
+                $('#chart_div').html('<h1>' + result + '</h1>');
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="chart_div"></div>
+</body>
+</html>

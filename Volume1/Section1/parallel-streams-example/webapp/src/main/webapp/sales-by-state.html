@@ -1,0 +1,34 @@
+<html>
+<head>
+    <script type="text/javascript" src="jqplot/jquery.min.js"></script>
+    <script type="text/javascript" src="jqplot/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="jqplot/plugins/jqplot.pieRenderer.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jqplot/jquery.jqplot.css" />
+</head>
+<body>
+<div id="chart" style="height:300px; width:500px;"></div>
+<script type="text/javascript">
+    $(function(){
+        $.getJSON( "api/dashboard/sales-by-state", function(data) {
+            var table = [];
+            $.each(data, function(state, sales) {
+                table.push([state, sales]);
+            });
+            $.jqplot ('chart', [table], {
+                    seriesDefaults: {
+                        // Make this a pie chart.
+                        renderer: $.jqplot.PieRenderer,
+                        rendererOptions: {
+                            // Put data labels on the pie slices.
+                            // By default, labels show the percentage of the slice.
+                            showDataLabels: true
+                        }
+                    },
+                    legend: { show:true, location: 'e' }
+                }
+            );
+        });
+    });
+</script>
+</body>
+</html>

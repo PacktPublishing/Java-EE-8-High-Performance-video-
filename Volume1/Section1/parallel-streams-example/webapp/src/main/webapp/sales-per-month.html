@@ -1,0 +1,67 @@
+<html>
+<head>
+    <script type="text/javascript" src="jqplot/jquery.min.js"></script>
+    <script type="text/javascript" src="jqplot/jquery.jqplot.min.js"></script>
+    <script type="text/javascript" src="jqplot/plugins/jqplot.barRenderer.min.js"></script>
+    <script type="text/javascript" src="jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="jqplot/plugins/jqplot.pointLabels.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jqplot/jquery.jqplot.css" />
+</head>
+<body>
+<div id="chart" style="height:300px; width:500px;"></div>
+<script type="text/javascript">
+    $(function() {
+        // mticks returns the labels for the x axis: "2013-10", "2013-11", ...
+        var mkticks = function() {
+            var now = new Date(),
+                currentMonth = now.getMonth() + 1,
+                currentYear = now.getFullYear(),
+                lastYear = currentYear - 1,
+                ticks = [],
+                m;
+            for(m = currentMonth; m<=12; m++) {
+                ticks.push(lastYear + "-" + m);
+            }
+            for(m = 1; m<=currentMonth; m++) {
+                ticks.push(currentYear + "-" + m);
+            }
+            return ticks.slice(ticks.length/2, ticks.length);
+        };
+
+        $.getJSON("api/dashboard/sales-per-month", function(response) {
+            var ticks = mkticks(),
+                data = [];
+            $.each(ticks, function(i, tick) {
+                if (response.hasOwnProperty(tick)) {
+                    data.push(response[tick]);
+                } else {
+                    data.push(0);
+                }
+            });
+            $.jqplot('chart', [data], {
+                seriesDefaults:{
+                    renderer:$.jqplot.BarRenderer,
+                    rendererOptions: {fillToZero: true}
+                },
+                series:[
+                    {label:'Sales'}
+                ],
+                legend: {
+                    show: true,
+                    placement: 'outsideGrid'
+                },
+                axes: {
+                    xaxis: {
+                        renderer: $.jqplot.CategoryAxisRenderer,
+                        ticks: ticks
+                    },
+                    yaxis: {
+                        pad: 1.05
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
