@@ -1,6 +1,6 @@
 # JCache (JSR107) Examples
 
-A bunch of examples I use in my talk on JCache.
+Examples on JCache for Video 3.4 of [Java EE 8 High Performance](https://github.com/PacktPublishing/Java-EE-8-High-Performance-video-)
 
 * Simple Cache and Configuration
 * CacheLoader for read-through to a back-end, maybe an RDBMS
@@ -24,4 +24,3 @@ You should be able to switch the providers by changing the String passed to the 
 // Acquire the default cache provider
 CachingProvider cachingProvider = Caching.getCachingProvider(CACHING_PROVIDER_HAZELCAST);
 ```
-
