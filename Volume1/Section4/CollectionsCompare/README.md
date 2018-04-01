@@ -4,7 +4,7 @@ Collections are a staple in any programming language: the need to collect, sort 
 
 
 # Initial Authors
-(special thanks to)
+(Thanks to)
 * [Leonardo de Moura Rocha Lima](http://cfp.devoxx.us/2017/speaker/leonardo_de_moura_rocha_lima)
 * [Nikhil Nanivadekar](http://cfp.devoxx.us/2017/speaker/nikhil_nanivadekar)
 * [Donald Raab](http://cfp.devoxx.us/2017/speaker/donald_raab)
