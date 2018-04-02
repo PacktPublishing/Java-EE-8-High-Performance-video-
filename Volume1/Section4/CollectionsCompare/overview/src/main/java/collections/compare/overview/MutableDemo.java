@@ -1,4 +1,4 @@
-package overview;
+package collections.compare.overview;
 
 import org.eclipse.collections.api.bag.MutableBag;
 import org.eclipse.collections.api.bimap.MutableBiMap;
@@ -16,6 +16,7 @@ import org.eclipse.collections.impl.factory.Sets;
 import org.eclipse.collections.impl.factory.Stacks;
 
 public class MutableDemo {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		//Initializing mutable list with empty(), of(), with() method
 		MutableList<String> mutableListEmpty =

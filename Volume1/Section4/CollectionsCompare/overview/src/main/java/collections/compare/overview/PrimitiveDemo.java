@@ -1,4 +1,4 @@
-package overview;
+package collections.compare.overview;
 
 import org.eclipse.collections.api.list.primitive.MutableBooleanList;
 import org.eclipse.collections.api.list.primitive.MutableByteList;

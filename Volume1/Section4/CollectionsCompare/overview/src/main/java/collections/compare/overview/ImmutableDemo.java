@@ -1,4 +1,4 @@
-package overview;
+package collections.compare.overview;
 
 import org.eclipse.collections.api.bag.ImmutableBag;
 import org.eclipse.collections.api.bimap.ImmutableBiMap;
