@@ -7,9 +7,9 @@ Java EE 8 High Performance(video), published by Packt
 ```
 .
 ├── Section1
-│     └── Video_1.X  <-- contains the files/examples used in this video 
-│  	  │  
-│  	  └── module-xyz <-- contains Maven module examples with a specific 
+│     └── Video_1.x  <-- contains the files/examples used in this video 
+│     │  
+│     └── module-xyz <-- contains Maven module examples with a specific 
 │                               artifactId used in this section
 └── Section2
 ```
