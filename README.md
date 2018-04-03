@@ -6,13 +6,12 @@ Java EE 8 High Performance(video), published by Packt
 
 ```
 .
-├── Volume1
-│     └─── SectionX
-│            └── Video_X.Y <-- contains the files/examples used in this video
-│  			│  
-│  			└── module-xyz <-- contains Maven module examples with a specific 
+├── Section1
+│     └── Video_1.X  <-- contains the files/examples used in this video 
+│  	  │  
+│  	  └── module-xyz <-- contains Maven module examples with a specific 
 │                               artifactId used in this section
-└── Volume2
+└── Section2
 ```
 
 Have a great course!
