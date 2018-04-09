@@ -1,4 +1,4 @@
-# Section 3
+# Section 5
 
 - [REST Stability](stability) examples for Video 5.2
 
