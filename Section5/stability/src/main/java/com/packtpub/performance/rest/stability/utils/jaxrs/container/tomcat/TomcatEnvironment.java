@@ -15,8 +15,6 @@
  */
 package com.packtpub.performance.rest.stability.utils.jaxrs.container.tomcat;
 
-
-
 import java.lang.management.ManagementFactory;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -28,45 +26,41 @@ import javax.management.ObjectName;
 
 import com.packtpub.performance.rest.stability.utils.jaxrs.container.Environment;
 
-
-
-
-
 public class TomcatEnvironment implements Environment {
-    
-    private static final Logger LOG = Logger.getLogger(TomcatEnvironment.class.getName());
-    
-    
-    @Override
-    public Threadpool getThreadpoolUsage() {
-        
-        Threadpool pool = null;
-        
-        MBeanServer mbeanServer = ManagementFactory.getPlatformMBeanServer();
-        if (mbeanServer != null) {
-            try {
-                Set<ObjectInstance> threadPoolMBeans = mbeanServer.queryMBeans(new ObjectName("*:type=*,*"), null);
 
-                threadPoolMBeans = mbeanServer.queryMBeans(new ObjectName("*:type=ThreadPool,*"), null);
+	private static final Logger LOG = Logger.getLogger(TomcatEnvironment.class.getName());
 
-                for (ObjectInstance threadPoolMBean : threadPoolMBeans) {
-                    ObjectName objectName = threadPoolMBean.getObjectName();
-                    Integer maxThreads = (Integer) mbeanServer.getAttribute(objectName, "maxThreads");
-                    Integer currentThreadCount = (Integer) mbeanServer.getAttribute(objectName, "currentThreadCount");
-                    Integer currentThreadsBusy = (Integer) mbeanServer.getAttribute(objectName, "currentThreadsBusy");
+	@Override
+	public Threadpool getThreadpoolUsage() {
 
-                    String name = (objectName.getKeyProperty("name") == null) ? "unknown" : objectName.getKeyProperty("name");
+		Threadpool pool = null;
 
-                    if ((pool == null) || (maxThreads > pool.getMaxThreads())) {
-                        pool = new Threadpool(name, maxThreads, currentThreadCount, currentThreadsBusy);
-                    }
-                }
+		MBeanServer mbeanServer = ManagementFactory.getPlatformMBeanServer();
+		if (mbeanServer != null) {
+			try {
+				Set<ObjectInstance> threadPoolMBeans = mbeanServer.queryMBeans(new ObjectName("*:type=*,*"), null);
 
-            } catch (JMException | RuntimeException e) {
-                LOG.fine("could not get tomcat thread info" + e);
-            }
-        }
+				threadPoolMBeans = mbeanServer.queryMBeans(new ObjectName("*:type=ThreadPool,*"), null);
 
-        return pool;
-    }
+				for (ObjectInstance threadPoolMBean : threadPoolMBeans) {
+					ObjectName objectName = threadPoolMBean.getObjectName();
+					Integer maxThreads = (Integer) mbeanServer.getAttribute(objectName, "maxThreads");
+					Integer currentThreadCount = (Integer) mbeanServer.getAttribute(objectName, "currentThreadCount");
+					Integer currentThreadsBusy = (Integer) mbeanServer.getAttribute(objectName, "currentThreadsBusy");
+
+					String name = (objectName.getKeyProperty("name") == null) ? "unknown"
+							: objectName.getKeyProperty("name");
+
+					if ((pool == null) || (maxThreads > pool.getMaxThreads())) {
+						pool = new Threadpool(name, maxThreads, currentThreadCount, currentThreadsBusy);
+					}
+				}
+
+			} catch (JMException | RuntimeException e) {
+				LOG.fine("could not get tomcat thread info" + e);
+			}
+		}
+
+		return pool;
+	}
 }

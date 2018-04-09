@@ -41,8 +41,6 @@ import com.packtpub.performance.rest.stability.utils.jaxrs.client.circuitbreaker
 import static com.packtpub.performance.rest.stability.service.payment.PaymentMethod.*;
 import static com.packtpub.performance.rest.stability.service.scoring.Score.*;
 
-  
-
 @Singleton
 @Path("sync")
 public class SyncPaymentService {
@@ -53,10 +51,6 @@ public class SyncPaymentService {
 
     private final Client client;
     private final PaymentDao paymentDao; 
-    
-    
-    
-    
     // ...
     
     public SyncPaymentService() {

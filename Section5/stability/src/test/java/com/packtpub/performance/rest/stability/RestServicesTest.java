@@ -17,11 +17,10 @@ package com.packtpub.performance.rest.stability;
 
 
 
-
+import static org.junit.Assert.*;
 import static com.packtpub.performance.rest.stability.service.payment.PaymentMethod.*;
 
 import java.io.File;
-import java.time.Instant;
 import java.util.Set;
 
 import javax.ws.rs.NotFoundException;
@@ -58,11 +57,8 @@ public class RestServicesTest {
         server = new Tomcat();
         server.setPort(9080);
         server.addWebapp("/service", new File("src/main/resources/webapp").getAbsolutePath());
-
         server.start();
-        
 
-        
         ClientConfig clientConfig = new ClientConfig();                    // jersey specific
         clientConfig.connectorProvider(new ApacheConnectorProvider());     // jersey specific
         
@@ -89,8 +85,6 @@ public class RestServicesTest {
         client.close();
     }
 
-    
-
     /*
     @Test
     public void testResteasy() throws Exception {
@@ -115,7 +109,7 @@ public class RestServicesTest {
                                 .request()
                                 .get(Payment.class);
         
-        Assert.assertNotNull(payment);
+        assertNotNull(payment);
     }
 
     
@@ -127,7 +121,7 @@ public class RestServicesTest {
                             .request()
                             .get(Score.class);
         
-        Assert.assertEquals(Score.POSITIVE, score);
+        assertEquals(Score.POSITIVE, score);
     }
 
     
@@ -140,7 +134,7 @@ public class RestServicesTest {
                             .request()
                             .get(Score.class);
         
-        Assert.assertEquals(Score.NEUTRAL, score);
+        assertEquals(Score.NEUTRAL, score);
     }
     
 
@@ -151,7 +145,7 @@ public class RestServicesTest {
                             .request()
                             .get(Score.class);
         
-        Assert.assertEquals(Score.NEGATIVE, score);
+        assertEquals(Score.NEGATIVE, score);
     }
     
 
@@ -195,8 +189,8 @@ public class RestServicesTest {
                                                   .request()
                                                   .get(new GenericType<Set<PaymentMethod>>() { });    
          
-        Assert.assertEquals(1, paymentMethods.size());
-        Assert.assertTrue(paymentMethods.contains(PREPAYMENT));
+        assertEquals(1, paymentMethods.size());
+        assertTrue(paymentMethods.contains(PREPAYMENT));
     }
     
     
@@ -208,11 +202,11 @@ public class RestServicesTest {
                                                   .header("X-Client", "Testapp")
                                                   .get(new GenericType<Set<PaymentMethod>>() { });    
         
-        Assert.assertEquals(4, paymentMethods.size());
-        Assert.assertTrue(paymentMethods.contains(PREPAYMENT));
-        Assert.assertTrue(paymentMethods.contains(CREDITCARD));
-        Assert.assertTrue(paymentMethods.contains(PAYPAL));
-        Assert.assertTrue(paymentMethods.contains(INVOCE));
+        assertEquals(4, paymentMethods.size());
+        assertTrue(paymentMethods.contains(PREPAYMENT));
+        assertTrue(paymentMethods.contains(CREDITCARD));
+        assertTrue(paymentMethods.contains(PAYPAL));
+        assertTrue(paymentMethods.contains(INVOCE));
     }
     
     
@@ -225,11 +219,11 @@ public class RestServicesTest {
                                                   .header("X-Client", "Testapp")
                                                   .get(new GenericType<Set<PaymentMethod>>() { });    
         
-        Assert.assertEquals(4, paymentMethods.size());
-        Assert.assertTrue(paymentMethods.contains(PREPAYMENT));
-        Assert.assertTrue(paymentMethods.contains(CREDITCARD));
-        Assert.assertTrue(paymentMethods.contains(PAYPAL));
-        Assert.assertTrue(paymentMethods.contains(INVOCE));
+        assertEquals(4, paymentMethods.size());
+        assertTrue(paymentMethods.contains(PREPAYMENT));
+        assertTrue(paymentMethods.contains(CREDITCARD));
+        assertTrue(paymentMethods.contains(PAYPAL));
+        assertTrue(paymentMethods.contains(INVOCE));
     }
     
     
@@ -250,10 +244,10 @@ public class RestServicesTest {
                                                   .request()
                                                   .get(new GenericType<Set<PaymentMethod>>() { });    
         
-        Assert.assertEquals(3, paymentMethods.size());
-        Assert.assertTrue(paymentMethods.contains(PREPAYMENT));
-        Assert.assertTrue(paymentMethods.contains(CREDITCARD));
-        Assert.assertTrue(paymentMethods.contains(PAYPAL));
+        assertEquals(3, paymentMethods.size());
+        assertTrue(paymentMethods.contains(PREPAYMENT));
+        assertTrue(paymentMethods.contains(CREDITCARD));
+        assertTrue(paymentMethods.contains(PAYPAL));
     }
     
     
@@ -264,11 +258,11 @@ public class RestServicesTest {
                                                   .request()
                                                   .get(new GenericType<Set<PaymentMethod>>() { });    
          
-        Assert.assertEquals(4, paymentMethods.size());
-        Assert.assertTrue(paymentMethods.contains(INVOCE));
-        Assert.assertTrue(paymentMethods.contains(PREPAYMENT));
-        Assert.assertTrue(paymentMethods.contains(CREDITCARD));
-        Assert.assertTrue(paymentMethods.contains(PAYPAL));
+        assertEquals(4, paymentMethods.size());
+        assertTrue(paymentMethods.contains(INVOCE));
+        assertTrue(paymentMethods.contains(PREPAYMENT));
+        assertTrue(paymentMethods.contains(CREDITCARD));
+        assertTrue(paymentMethods.contains(PAYPAL));
     }
     
     
@@ -281,7 +275,7 @@ public class RestServicesTest {
                                                   .request()
                                                   .get(new GenericType<Set<PaymentMethod>>() { });    
          
-        Assert.assertEquals(1, paymentMethods.size());
-        Assert.assertTrue(paymentMethods.contains(PREPAYMENT));
+        assertEquals(1, paymentMethods.size());
+        assertTrue(paymentMethods.contains(PREPAYMENT));
     }
 }

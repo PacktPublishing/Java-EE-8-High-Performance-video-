@@ -43,15 +43,11 @@ import com.packtpub.performance.rest.stability.utils.jaxrs.client.Java8Client;
 import com.packtpub.performance.rest.stability.utils.jaxrs.client.ResultConsumer;
 import com.packtpub.performance.rest.stability.utils.jaxrs.client.circuitbreaker.ClientCircutBreakerFilter;
 
-  
-
 @Singleton
 @Path("/")
 public class AsyncPaymentService {
 
-    private static final URI creditScoreURI = URI.create("http://localhost:9080/service/rest/creditscores"); 
-
-    
+    private static final URI creditScoreURI = URI.create("http://localhost:9080/service/rest/creditscores");    
     private final Java8Client client;
     private final AsyncPaymentDao paymentDao; 
     
@@ -60,19 +56,13 @@ public class AsyncPaymentService {
     public AsyncPaymentService() {
         ClientConfig clientConfig = new ClientConfig();                    // jersey specific
         clientConfig.connectorProvider(new GrizzlyConnectorProvider());    // jersey specific
-
-        //...
         
         // use extended client (JAX-RS 2.0 client does not support CompletableFutures)
         client = Java8Client.newClient(ClientBuilder.newClient(clientConfig)); 
         client.register(new ClientCircutBreakerFilter());
         
-        
         paymentDao = new PaymentDaoImpl();
     }
-    
-
-    
 
     private final static Function<Score, ImmutableSet<PaymentMethod>> SCORE_TO_PAYMENTMETHOD = score ->  {
                             
@@ -85,7 +75,6 @@ public class AsyncPaymentService {
                                 return  ImmutableSet.of(CREDITCARD, PAYPAL, PREPAYMENT);
                             }
     };
-
     
     @Path("paymentmethods")
     @GET
