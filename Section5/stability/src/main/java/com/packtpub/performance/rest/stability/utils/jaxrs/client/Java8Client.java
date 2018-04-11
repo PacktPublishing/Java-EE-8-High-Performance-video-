@@ -25,10 +25,12 @@ import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.ws.rs.client.AsyncInvoker;
 import javax.ws.rs.client.Client;
+import javax.ws.rs.client.CompletionStageRxInvoker;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.InvocationCallback;
+import javax.ws.rs.client.RxInvoker;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.Configuration;
@@ -278,7 +280,6 @@ public class Java8Client implements Client {
         public CompletableBuilder(Builder builder) {
             this.builder = builder;
         }
-        
        
         @Override
         public Response get() {
@@ -494,6 +495,16 @@ public class Java8Client implements Client {
         public <T> T method(String name, Entity<?> entity, GenericType<T> responseType) {
             return builder.method(name, entity, responseType);
         }
+
+		@Override
+		public CompletionStageRxInvoker rx() {
+			return builder.rx();
+		}
+
+		@Override
+		public <T extends RxInvoker> T rx(Class<T> t) {
+			return builder.rx(t);
+		}
     }
     
     public static class CompletableFutureAsyncInvoker implements AsyncInvoker {
@@ -780,8 +791,6 @@ public class Java8Client implements Client {
             }
         }
         
-        
-        
         private static class CompletableFutureGenericObjectCallbackAdapter<T> implements InvocationCallback<Response> {
             
             private final GenericType<T> responseType;
@@ -790,7 +799,6 @@ public class Java8Client implements Client {
             public CompletableFutureGenericObjectCallbackAdapter(GenericType<T> responseType) {
                 this.responseType = responseType;
             }
-            
             
             CompletableFuture<T> getCompletableFuture() {
                 return future;

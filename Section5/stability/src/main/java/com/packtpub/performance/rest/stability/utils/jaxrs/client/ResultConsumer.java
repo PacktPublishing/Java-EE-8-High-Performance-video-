@@ -15,15 +15,9 @@
  */
 package com.packtpub.performance.rest.stability.utils.jaxrs.client;
 
-
-
 import java.util.concurrent.CompletionException;
 import java.util.function.BiConsumer;
-
 import javax.ws.rs.container.AsyncResponse;
-
-
-
 
 public class ResultConsumer implements BiConsumer<Object, Throwable> {
     
