@@ -271,8 +271,6 @@ public class Java8Client implements Client {
             return new CompletableWebTarget(webTarget.register(component, contracts));
         }
     }
-
-    
     
     public static class CompletableBuilder implements Builder {
         private final Builder builder;
@@ -733,15 +731,11 @@ public class Java8Client implements Client {
         public <T> Future<T> method(String name, Entity<?> entity, InvocationCallback<T> callback) {
             return asyncInvoker.method(name, entity, callback);
         }
-        
-        
-        
 
         private static class CompletableFutureCallbackAdapter implements InvocationCallback<Response> {
             
             private final CompletableFuture<Response> future = new CompletableFuture<Response>();
-            
-            
+                   
             CompletableFuture<Response> getCompletableFuture() {
                 return future;
             }
