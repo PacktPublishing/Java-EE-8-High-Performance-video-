@@ -6,7 +6,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jersey.version>2.23</jersey.version>
-		<tomcat.version>8.0.23</tomcat.version>
+		<tomcat.version>8.0.50</tomcat.version>
 	</properties>
 	<dependencies>
 		<dependency>
