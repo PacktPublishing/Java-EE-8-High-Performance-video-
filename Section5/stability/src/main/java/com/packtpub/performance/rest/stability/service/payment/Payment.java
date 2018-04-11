@@ -17,8 +17,6 @@ package com.packtpub.performance.rest.stability.service.payment;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-
-
 @XmlRootElement
 public class Payment {
 
@@ -29,12 +27,10 @@ public class Payment {
     public Payment() {
     }
     
-    
     public Payment(String id, boolean isDelayed) {
         this.id = id;
         this.isDelayed = isDelayed;
     }
-    
     
     public void setId(String id) {
         this.id = id;
@@ -43,7 +39,6 @@ public class Payment {
     public void setDelayed(boolean isDelayed) {
         this.isDelayed = isDelayed;
     }
-
 
     public String getId() {
         return id;

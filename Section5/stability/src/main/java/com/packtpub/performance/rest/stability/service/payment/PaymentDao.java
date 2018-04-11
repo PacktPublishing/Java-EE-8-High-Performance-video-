@@ -15,14 +15,9 @@
  */
 package com.packtpub.performance.rest.stability.service.payment;
 
-
 import java.util.Optional;
 
 import com.google.common.collect.ImmutableList;
-
-
-
-
 
 interface PaymentDao {
 

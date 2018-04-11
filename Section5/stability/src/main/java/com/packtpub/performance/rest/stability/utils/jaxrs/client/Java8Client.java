@@ -15,8 +15,6 @@
  */
 package com.packtpub.performance.rest.stability.utils.jaxrs.client;
 
-
-
 import java.net.URI;
 import java.util.Locale;
 import java.util.Map;
@@ -42,24 +40,18 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
-
-
-
 public class Java8Client implements Client {
 
     private final Client client;
-
 
     private Java8Client(Client client) {
         this.client = client;
     }
     
-    
     public static Java8Client newClient(Client client) {
         return new Java8Client(client);
     }
 
-    
     @Override
     public void close() {
         client.close();
@@ -149,20 +141,14 @@ public class Java8Client implements Client {
     public Java8Client register(Object component, Map<Class<?>, Integer> contracts) {
         return new Java8Client(client.register(component, contracts));
     }
-    
-   
-
-    
    
     public static class CompletableWebTarget implements WebTarget {
         private final WebTarget webTarget;
-
       
         public CompletableWebTarget(WebTarget webTarget) {
             this.webTarget = webTarget;
         }
 
-        
         @Override    
         public URI getUri() {
             return webTarget.getUri();
@@ -510,8 +496,6 @@ public class Java8Client implements Client {
         }
     }
     
-        
-
     public static class CompletableFutureAsyncInvoker implements AsyncInvoker {
         private final AsyncInvoker asyncInvoker;
         

@@ -15,7 +15,6 @@
  */
 package com.packtpub.performance.rest.stability.service.payment;
 
-
 import static com.packtpub.performance.rest.stability.service.payment.PaymentMethod.*;
 
 import java.net.URI;
@@ -64,8 +63,7 @@ public class AsyncPaymentService {
         paymentDao = new PaymentDaoImpl();
     }
 
-    private final static Function<Score, ImmutableSet<PaymentMethod>> SCORE_TO_PAYMENTMETHOD = score ->  {
-                            
+    private final static Function<Score, ImmutableSet<PaymentMethod>> SCORE_TO_PAYMENTMETHOD = score ->  {                           
                             switch (score) {
                             case POSITIVE:
                                 return ImmutableSet.of(CREDITCARD, PAYPAL, PREPAYMENT, INVOCE);
@@ -89,8 +87,7 @@ public class AsyncPaymentService {
            .thenApply(SCORE_TO_PAYMENTMETHOD)
            .whenComplete(ResultConsumer.write(resp));  // writes result/error into async response 
     }
-    
-    
+     
     @Path("payments/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
