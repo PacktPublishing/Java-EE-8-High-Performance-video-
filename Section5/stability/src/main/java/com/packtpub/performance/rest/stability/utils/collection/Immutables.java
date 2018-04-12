@@ -28,8 +28,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
-
-
 public class Immutables {
 
     public static <T> Collector<T, ?, ImmutableList<T>> toList() {
@@ -41,8 +39,7 @@ public class Immutables {
         Collector<T, ?, List<T>> collector = Collectors.toList();
         return Collectors.collectingAndThen(collector, ImmutableSet::copyOf);
     }
-        
-    
+            
     public static <T, K, U> Collector<T, ?, ImmutableMap<K,U>> toMap(Function<? super T, ? extends K> keyMapper,
                                                                     Function<? super T, ? extends U> valueMapper) {
         Collector<T, ?, Map<K,U>> collector = Collectors.toMap(keyMapper, valueMapper);
