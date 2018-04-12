@@ -49,9 +49,7 @@ public class AsyncPaymentService {
     private static final URI creditScoreURI = URI.create("http://localhost:9080/service/rest/creditscores");    
     private final Java8Client client;
     private final AsyncPaymentDao paymentDao; 
-    
-    // ...
-    
+      
     public AsyncPaymentService() {
         ClientConfig clientConfig = new ClientConfig();                    // jersey specific
         clientConfig.connectorProvider(new GrizzlyConnectorProvider());    // jersey specific
@@ -59,19 +57,18 @@ public class AsyncPaymentService {
         // use extended client (JAX-RS 2.0 client does not support CompletableFutures)
         client = Java8Client.newClient(ClientBuilder.newClient(clientConfig)); 
         client.register(new ClientCircutBreakerFilter());
-        
         paymentDao = new PaymentDaoImpl();
     }
 
     private final static Function<Score, ImmutableSet<PaymentMethod>> SCORE_TO_PAYMENTMETHOD = score ->  {                           
-                            switch (score) {
-                            case POSITIVE:
-                                return ImmutableSet.of(CREDITCARD, PAYPAL, PREPAYMENT, INVOCE);
-                            case NEGATIVE:
-                                return ImmutableSet.of(PREPAYMENT);
-                            default:
-                                return  ImmutableSet.of(CREDITCARD, PAYPAL, PREPAYMENT);
-                            }
+        switch (score) {
+        case POSITIVE:
+            return ImmutableSet.of(CREDITCARD, PAYPAL, PREPAYMENT, INVOCE);
+        case NEGATIVE:
+            return ImmutableSet.of(PREPAYMENT);
+        default:
+            return  ImmutableSet.of(CREDITCARD, PAYPAL, PREPAYMENT);
+        }
     };
     
     @Path("paymentmethods")
@@ -92,7 +89,6 @@ public class AsyncPaymentService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public void getPaymentAsync(@PathParam("id") String id, @Suspended AsyncResponse resp) {
-        
         paymentDao.getPaymentAsync(id)
                   .thenApply(optionalPayment -> optionalPayment.<NotFoundException>orElseThrow(NotFoundException::new))
                   .whenComplete(ResultConsumer.write(resp));
