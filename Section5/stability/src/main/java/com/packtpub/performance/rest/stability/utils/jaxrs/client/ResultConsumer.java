@@ -41,7 +41,6 @@ public class ResultConsumer implements BiConsumer<Object, Throwable> {
         }
     }
     
-    
     private static Throwable unwrapIfNecessary(Throwable ex, int maxDepth)  {
 
         if (CompletionException.class.isAssignableFrom(ex.getClass())) {

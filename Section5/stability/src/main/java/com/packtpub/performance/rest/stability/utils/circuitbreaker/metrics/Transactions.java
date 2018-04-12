@@ -18,8 +18,6 @@ package com.packtpub.performance.rest.stability.utils.circuitbreaker.metrics;
 import java.time.Duration;
 import java.time.Instant;
 
-
-
 public interface Transactions {
     
     int size();

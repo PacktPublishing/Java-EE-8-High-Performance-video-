@@ -20,7 +20,7 @@ import java.time.Instant;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSet.Builder;
-import com.packtpub.performance.rest.stability.utils.collection.Immutables;
+import com.packtpub.performance.rest.stability.utils.Immutables;
 
 
 

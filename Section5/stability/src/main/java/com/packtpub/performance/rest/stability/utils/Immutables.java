@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.packtpub.performance.rest.stability.utils.collection;
+package com.packtpub.performance.rest.stability.utils;
 
 import java.util.List;
 
