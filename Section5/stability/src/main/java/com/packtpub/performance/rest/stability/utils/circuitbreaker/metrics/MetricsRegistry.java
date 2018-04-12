@@ -19,12 +19,9 @@ import java.util.Map;
 
 import jersey.repackaged.com.google.common.collect.Maps;
 
-
-
 public class MetricsRegistry {
     
     private final Map<String, TransactionMetrics> metricsMap = Maps.newConcurrentMap();
-    
     private final int maxEntries = 100;
     private final int bufferSize = 1000;
 
@@ -42,4 +39,3 @@ public class MetricsRegistry {
         return metrics;
     }
 }
-

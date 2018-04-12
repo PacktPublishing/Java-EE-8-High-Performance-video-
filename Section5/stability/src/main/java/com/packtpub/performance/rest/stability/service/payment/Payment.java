@@ -23,7 +23,6 @@ public class Payment {
     private String id;
     private boolean isDelayed;
     
-
     public Payment() {
     }
     

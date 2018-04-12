@@ -21,11 +21,6 @@ import java.util.concurrent.CompletableFuture;
 
 import com.google.common.collect.ImmutableList;
 
-
-
-
-
-
 class PaymentDaoImpl implements PaymentDao, AsyncPaymentDao {
 
     @Override
@@ -37,12 +32,10 @@ class PaymentDaoImpl implements PaymentDao, AsyncPaymentDao {
         } else if (address.startsWith("John")) {
             return ImmutableList.of(new Payment(UUID.randomUUID().toString(), true), 
                                     new Payment(UUID.randomUUID().toString(), false));
-
         } else {
             return ImmutableList.of();
         }
     }
-    
     
     @Override
     public Optional<Payment> getPayment(String id) {
@@ -53,12 +46,10 @@ class PaymentDaoImpl implements PaymentDao, AsyncPaymentDao {
         }
     }
 
-    
     @Override
     public CompletableFuture<ImmutableList<Payment>> getPaymentsAsync(String address, int max) {
         return CompletableFuture.completedFuture(getPayments(address, max));
     }
-    
     
     @Override
     public CompletableFuture<Optional<Payment>> getPaymentAsync(String id) {

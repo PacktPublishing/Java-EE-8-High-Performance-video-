@@ -21,7 +21,6 @@ import com.packtpub.performance.rest.stability.utils.circuitbreaker.HealthPolicy
 import com.packtpub.performance.rest.stability.utils.circuitbreaker.metrics.MetricsRegistry;
 import com.packtpub.performance.rest.stability.utils.circuitbreaker.metrics.Transactions;
 
-
 public class ErrorRateBasedHealthPolicy implements HealthPolicy  {
   
     private final MetricsRegistry metricsRegistry;
@@ -33,13 +32,11 @@ public class ErrorRateBasedHealthPolicy implements HealthPolicy  {
         this(metricsRegistry, 30);
     }
 
-    
     public ErrorRateBasedHealthPolicy(MetricsRegistry metricsRegistry, int thresholdMinRatePerMin) {
         this.metricsRegistry = metricsRegistry;
         this.thresholdMinReqPerMin = thresholdMinRatePerMin;
     }
   
-    
     @Override
     public boolean isHealthy(String scope) {
         Transactions transactions =  metricsRegistry.transactions(scope).ofLast(Duration.ofMinutes(1));
@@ -49,4 +46,3 @@ public class ErrorRateBasedHealthPolicy implements HealthPolicy  {
                   (true)                                    );             // client connection pool limit reached?
     }
 }
-

@@ -15,13 +15,10 @@
  */
 package com.packtpub.performance.rest.stability.utils.circuitbreaker;
 
-
 import java.time.Duration;
 import java.util.Map;
 
 import jersey.repackaged.com.google.common.collect.Maps;
-
-
 
 public class CircuitBreakerRegistry {
 
@@ -31,11 +28,9 @@ public class CircuitBreakerRegistry {
 
     private final HealthPolicy healthPolicy;
 
-    
     public CircuitBreakerRegistry(HealthPolicy healthPolicy) {
         this.healthPolicy = healthPolicy;
     }
-    
     
     public CircuitBreaker get(String scope) {        
         if (scope == null) {

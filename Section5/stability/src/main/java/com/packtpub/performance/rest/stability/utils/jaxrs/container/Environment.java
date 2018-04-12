@@ -17,7 +17,6 @@ package com.packtpub.performance.rest.stability.utils.jaxrs.container;
 
 public interface Environment  {
 
-    
     Threadpool getThreadpoolUsage();       
 
     public static class Threadpool {
@@ -47,10 +46,6 @@ public interface Environment  {
         
         public int getCurrentThreadsBusy() {
             return currentThreadsBusy;
-        }
-        
-        
-        
+        }       
     }
-    
 }

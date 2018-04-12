@@ -15,9 +15,6 @@
  */
 package com.packtpub.performance.rest.stability.utils.circuitbreaker;
 
-
-
-
 public interface HealthPolicy  {
  
     boolean isHealthy(String scope);

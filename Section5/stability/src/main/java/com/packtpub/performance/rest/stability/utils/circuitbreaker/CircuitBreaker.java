@@ -23,11 +23,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 
-
-
-
-public class CircuitBreaker {
-    // ..
+public final class CircuitBreaker {
     private final String scope;
     private final Random random = new Random(); 
     private final Duration openStateTimeout;
@@ -35,20 +31,15 @@ public class CircuitBreaker {
 
     private final AtomicReference<CircuitBreakerState> state = new AtomicReference<>(new ClosedState()); 
 
-
-    
     CircuitBreaker(String scope, HealthPolicy healthPolicy, Duration openStateTimeout) {
         this.scope = scope;
         this.policy = new CachedCircuitBreakerPolicy(healthPolicy, Duration.ofSeconds(3));
         this.openStateTimeout = openStateTimeout;
     }
-    
-    
+        
     public boolean isRequestAllowed() {
         return state.get().isRequestAllowed();
     }
-    
-
     
     private final class ClosedState implements CircuitBreakerState {
         
@@ -59,8 +50,6 @@ public class CircuitBreaker {
         }
     }
     
-    
-     
     private final class OpenState implements CircuitBreakerState {
         private final Instant exitDate = Instant.now().plus(openStateTimeout);  
         
@@ -70,9 +59,7 @@ public class CircuitBreaker {
                                                      : false;
         }
     }
-
-    
-    
+  
     private final class HalfOpenState implements CircuitBreakerState {
         private double chance = 0.02;  // 2% will be passed through
 
@@ -83,9 +70,6 @@ public class CircuitBreaker {
         }
     }
 
-    
-    
-    
     private CircuitBreakerState changeState(CircuitBreakerState newState) {
         state.set(newState);
         return newState;
@@ -95,22 +79,16 @@ public class CircuitBreaker {
         boolean isRequestAllowed();       
     }
     
-    
-
-    
     private class CachedCircuitBreakerPolicy implements HealthPolicy  {
         
         private final HealthPolicy healthPolicy;
         private final Duration cacheTtl;
-        
         private final Cache<String, CachedResult> cache = CacheBuilder.newBuilder().maximumSize(1000).build();
-        
         
         public CachedCircuitBreakerPolicy(HealthPolicy healthPolicy, Duration cacheTtl) {
             this.healthPolicy = healthPolicy;
             this.cacheTtl = cacheTtl;
         }
-        
         
         @Override
         public boolean isHealthy(String scope) {
@@ -122,19 +100,17 @@ public class CircuitBreaker {
             }
 
             return cachedResult.isHealthy();
-        }  
-        
+        }
         
         private class CachedResult {
             private final boolean isHealthy;
             private Instant validTo;
             
-            
+
             CachedResult(boolean isHealthy, Duration ttl) {
                 this.isHealthy = isHealthy;
                 validTo = Instant.now().plus(ttl);
             }
-            
             
             public boolean isExpired() {
                 return Instant.now().isAfter(validTo);
@@ -145,7 +121,4 @@ public class CircuitBreaker {
             }
         }
     }
-    
-    // ..
 }
-

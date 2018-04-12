@@ -15,8 +15,6 @@
  */
 package com.packtpub.performance.rest.stability.utils.circuitbreaker;
 
-
-
 public class CircuitOpenedException extends RuntimeException {
 
     private static final long serialVersionUID = 2223053777879009788L;    
