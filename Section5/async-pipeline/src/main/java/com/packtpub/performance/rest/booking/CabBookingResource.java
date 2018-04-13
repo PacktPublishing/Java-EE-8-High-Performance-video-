@@ -1,4 +1,4 @@
-package com.wordpress.abhirockzz.javaee8.jaxrs;
+package com.packtpub.performance.rest.booking;
 
 import java.util.Random;
 
