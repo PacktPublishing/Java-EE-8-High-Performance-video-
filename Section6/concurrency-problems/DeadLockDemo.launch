@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/java-thread-deadlock/src/main/java/com/com/packtpub/performance/deadlock/DeadLockDemo.java"/>
+<listEntry value="/concurrency-problems/src/main/java/com/com/packtpub/performance/deadlock/DeadLockDemo.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
@@ -12,6 +12,6 @@
 <stringAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_ENCODING" value="UTF-8"/>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.com.packtpub.performance.deadlock.DeadLockDemo"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="java-thread-deadlock"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="concurrency-problems"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>
