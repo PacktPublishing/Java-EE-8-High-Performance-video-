@@ -16,7 +16,7 @@ public class Worker {
         try (
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
         ) {
-            writer.write("Thread " + name + " wrote this mesasge");
+            writer.write("Thread " + name + " wrote this message");
         } catch (IOException ex) {
             ex.printStackTrace();
         }

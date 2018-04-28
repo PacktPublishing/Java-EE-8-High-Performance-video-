@@ -2,8 +2,8 @@ package com.packtpub.performance.stuck;
 
 /**
  * StuckExample.java
- * This class is used to demonstrate starvation situation.
- * @author keilw
+ * This class is used to demonstrate a starvation situation.
+ * @author Werner Keil
  */
 public class StuckExample {
  
