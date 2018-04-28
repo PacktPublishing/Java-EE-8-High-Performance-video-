@@ -11,7 +11,7 @@ public class Worker {
  
     public synchronized void work() {
         String name = Thread.currentThread().getName();
-        String fileName = name + ".txt";
+        String fileName = "target" + File.separator + name + ".txt";
  
         try (
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
