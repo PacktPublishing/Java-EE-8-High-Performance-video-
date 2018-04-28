@@ -1,18 +1,15 @@
 package com.packtpub.performance.livelock;
 
 /**
- * HostageRescueLivelock.java
+ * Livelock Demo
  * This class is used to demonstrate livelock situation
- * @author www.codejava.net
+ * @author Werner Keil
  */
-public class HostageRescueLivelock {
+public class LivelockDemo {
     static final Police police = new Police();
- 
     static final Criminal criminal = new Criminal();
  
     public static void main(String[] args) {
- 
- 
         Thread t1 = new Thread(new Runnable() {
             public void run() {
                 police.giveRansom(criminal);
@@ -29,5 +26,4 @@ public class HostageRescueLivelock {
         t2.setName("Criminal");
         t2.start();
     }
- 
 }
