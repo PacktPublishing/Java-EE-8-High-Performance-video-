@@ -2,6 +2,7 @@ package com.packtpub.performance.memory;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author frank
@@ -9,7 +10,7 @@ import java.util.Date;
  */
 public class LeakExample {
 
-    static ArrayList<String> alist = new ArrayList<>();
+    static List<String> alist = new ArrayList<>();
     public void offByOneList(int count) {
 
         for (int n = 0; n < count; n++) {
