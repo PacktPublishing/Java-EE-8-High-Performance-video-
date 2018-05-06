@@ -11,6 +11,7 @@ import java.util.List;
 public class LeakExample {
 
     static List<String> alist = new ArrayList<>();
+    
     public void offByOneList(int count) {
 
         for (int n = 0; n < count; n++) {
@@ -29,9 +30,12 @@ public class LeakExample {
     }
 
     public static void main(String[] args) {
-        LeakExample leak = new LeakExample();
+    	int count = 42;
+    	if (args != null && args.length>0) {
+    		count = Integer.parseInt(args[0]);
+    	}
+        final LeakExample leak = new LeakExample();
 
-        while (true) leak.offByOneList(42);
-
+        while (true) leak.offByOneList(count);
     }
 }
