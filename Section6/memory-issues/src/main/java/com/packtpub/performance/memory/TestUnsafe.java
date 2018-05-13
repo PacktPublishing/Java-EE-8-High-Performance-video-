@@ -4,14 +4,15 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import sun.misc.Unsafe;
 
-
 public class TestUnsafe {
 
     public static void main(String[] args) throws Exception{
-        Class unsafeClass = Class.forName("sun.misc.Unsafe");
-        Field f = unsafeClass.getDeclaredField("theUnsafe");
+        @SuppressWarnings("rawtypes")
+		final Class unsafeClass = Class.forName("sun.misc.Unsafe");
+        final Field f = unsafeClass.getDeclaredField("theUnsafe");
         f.setAccessible(true);
-        Unsafe unsafe = (Unsafe) f.get(null);
+        @SuppressWarnings("restriction")
+		final Unsafe unsafe = (Unsafe) f.get(null);
         System.out.print("4..3..2..1...");
         try
         {
