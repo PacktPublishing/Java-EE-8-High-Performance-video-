@@ -1,0 +1,6 @@
+/target/
+/.settings/
+/cvs/
+/test-output/
+/.classpath
+/.project
