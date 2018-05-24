@@ -1,7 +1,6 @@
 package com.batch.beans;
 
 public class Employee {
-
 	private  String name;
 	private  String empId;
 	public String getName() {
