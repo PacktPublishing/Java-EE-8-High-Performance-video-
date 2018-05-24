@@ -2,7 +2,7 @@
 <data-sources>
 	<folder name="Performance"/>
 	<data-source id="h2_embedded-163851bde09-1d5008565fb7aae9" provider="generic" driver="h2_embedded" name="H2 - monitoringDB" save-password="true" show-system-objects="true" read-only="false" folder="Performance">
-		<connection server="" database="C:\data\h2\monitoringDB" url="jdbc:h2:C:\data\h2\monitoringDB" user="sa" password="AAUVISGi" type="dev"/>
+		<connection server="" database="C:/data/h2/monitoringDB" url="jdbc:h2:C:/data/h2/monitoringDB" user="sa" password="AAUVISGi" type="dev"/>
 	</data-source>
 	<filters/>
 </data-sources>
