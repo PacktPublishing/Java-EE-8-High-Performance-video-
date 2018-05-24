@@ -20,5 +20,4 @@ public class ClassReader implements ItemReader<Employee> {
 		System.out.println("Inside ClassReader..." + emp);
 		return emp;
 	}
-
 }

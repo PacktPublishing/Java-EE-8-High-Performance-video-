@@ -21,12 +21,7 @@ import de.viadee.spring.batch.infrastructure.Configurator;
 @Import(Configurator.class)
 public class Main {
 
-	public static void main(String[] args) throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {
-
-		//String springConfig="H:/workspace/SimplSpringBatchUsingAnn/src/com/spring/config/job.xml";
-		//@SuppressWarnings("resource")
-		//ApplicationContext context = new FileSystemXmlApplicationContext("file:"+springConfig);
-		
+	public static void main(String[] args) throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {	
 		@SuppressWarnings("resource")
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.register(Main.class);
@@ -38,11 +33,5 @@ public class Main {
 		//run job
 		JobExecution execution = jobLauncher.run(job, new JobParameters());
 		System.out.println("Exit Status : " + execution.getStatus());
-
-
-
 	}
-
 }
-
-

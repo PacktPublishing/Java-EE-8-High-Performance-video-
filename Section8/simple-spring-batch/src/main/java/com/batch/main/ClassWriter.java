@@ -12,7 +12,13 @@ public class ClassWriter implements ItemWriter<Employee> {
 	public void write(List<? extends Employee> arg0) throws Exception {
 		
 		System.out.println("Inside ClassWriter..." + arg0);
-		System.exit(0);//interrupt flow.
+//		try {
+//			Thread.sleep(20000);
+//			System.exit(0);//interrupt flow.
+//		}
+//		catch (InterruptedException ie) {
+//			System.err.println(ie);
+//			System.exit(-1);
+//		}
 	}
-
 }
