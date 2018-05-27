@@ -9,10 +9,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<version>1.0</version>
 	<name>Simple SpringBatch</name>
 	<description>Simple SpringBatch Using Annotations</description>
+
 	<properties>
 		<springbatch.version>3.0.5.RELEASE</springbatch.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
@@ -26,17 +29,4 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<version>1.0.2</version>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
