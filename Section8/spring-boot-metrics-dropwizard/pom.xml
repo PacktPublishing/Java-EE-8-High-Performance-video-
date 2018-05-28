@@ -33,14 +33,9 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- <dependency>
-			<groupId>io.dropwizard.metrics</groupId>
-			<artifactId>metrics-core</artifactId>
-		</dependency> -->
 		<dependency>
 	    	<groupId>io.dropwizard.metrics</groupId>
 	    	<artifactId>metrics-core</artifactId>
-	    	<version>3.1.2</version>
 		</dependency>
 		
 		<dependency>
@@ -69,7 +64,6 @@
 		</dependency>
 		<!-- Test -->
 		
-				
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -85,6 +79,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
