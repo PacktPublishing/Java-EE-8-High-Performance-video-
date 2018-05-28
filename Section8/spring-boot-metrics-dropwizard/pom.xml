@@ -5,7 +5,7 @@
 
 	<groupId>com.example</groupId>
 	<artifactId>spring-boot-metrics-dropwizard</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>spring-boot-metrics-dropwizard</name>
