@@ -9,3 +9,7 @@ Note, a [dbeaver-data-sources](https://github.com/PacktPublishing/Java-EE-8-High
 Where you do, please also update `db.url` in [SpringBatchMonitoring.properties](https://github.com/PacktPublishing/Java-EE-8-High-Performance-video-/blob/master/Section8/simple-spring-batch/src/main/resources/SpringBatchMonitoring.properties) accordingly.
 
 If you prefer a stand-alone installation or other comparable tools like [Squirrel SQL Client](http://squirrel-sql.sourceforge.net/), you may also view the **H2 monitoring DB** with one of these.
+
+## Video 8.3
+- [Metrics Get Started Example](metrics-getstarted) for [Dropwizard](https://www.dropwizard.io/) Metrics
+- [Spring Boot Metrics Dropwizard](spring-boot-metrics-dropwizard) a [Dropwizard](https://www.dropwizard.io/) Metrics example running on [Spring Boot](https://projects.spring.io/spring-boot/)
