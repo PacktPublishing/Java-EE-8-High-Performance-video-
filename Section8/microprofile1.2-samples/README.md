@@ -1,11 +1,6 @@
 # Eclipse MicroProfile 1.2 samples #
 
-[![Build Status](https://travis-ci.org/javaee-samples/microprofile1.2-samples.svg?branch=master)](https://travis-ci.org/javaee-samples/microprofile1.2-samples)
-
 This workspace consists of MicroProfile 1.2 Samples and unit tests for Metrics. MicroProfile is a code first, open API initiative about optimizing Enterprise Java for a microservices architecture.  See [microprofile.io](https://microprofile.io) for additional info.
-
-Samples are categorized in different directories, one for each technology/spec. 
-
 
 ## How to run? ##
 
@@ -62,17 +57,6 @@ To learn more about Arquillian please refer to the [Arquillian Guides](http://ar
 
 **To run only a subset of the tests do at the top-level directory**:
 
-1. Install top level dependencies: ``mvn clean install -pl "test-utils" -am``
-1. cd into desired module, e.g.: ``cd cdi``
-1. Run tests against desired server, e.g.: ``mvn clean test -P payara-remote``
-
-
-## How to contribute ##
-
-With your help we can improve this set of samples, learn from each other and grow the community full of passionate people who care about the technology, innovation and code quality. Every contribution matters!
-
-There is just a bunch of things you should keep in mind before sending a pull request, so we can easily get all the new things incorporated into the master branch.
-
-Standard tests are jUnit based. Test classes naming must comply with surefire naming standards `**/*Test.java`, `**/*Test*.java` or `**/*TestCase.java`.
-
-For the sake of clarity and consistency, and to minimize the upfront complexity, we prefer standard jUnit tests using Java, with as additional helpers HtmlUnit, Hamcrest and of course Arquillian. Please don't use alternatives for these technologies. If any new dependency has to be introduced into this project it should provide something that's not covered by these existing dependencies.
+1. Install top level dependencies: ``mvn clean install -pl "metrics" -am``
+1. cd into desired module, e.g.: ``cd metrics``
+1. Run against desired server, e.g.: ``mvn clean package -P payara-micro-managed``
