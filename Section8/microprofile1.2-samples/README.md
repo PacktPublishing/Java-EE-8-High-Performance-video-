@@ -47,14 +47,6 @@ The containers that download and install a server (the \*-ci-managed profiles) a
     This will change the version from the current one (e.g 5.0.0.172) to 5.0.0.174 for Payara testing purposes.
 
 
-**To run them in the console do**:
-
-1. In the terminal, ``mvn test -fae`` at the top-level directory to start the tests for the default profile.
-
-When developing and runing them from IDE, remember to activate the profile before running the test.
-
-To learn more about Arquillian please refer to the [Arquillian Guides](http://arquillian.org/guides/)
-
 **To run only a subset of the tests do at the top-level directory**:
 
 1. Install top level dependencies: ``mvn clean install -pl "metrics" -am``
