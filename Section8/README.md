@@ -16,3 +16,7 @@ If you prefer a stand-alone installation or other comparable tools like [Squirre
 
 ## Video 8.4
 - [MicroProfile 1.2 Metrics Samples](microprofile1.2-samples)
+
+## Video 8.5
+- [Spring Boot Prometheus](https://github.com/aboullaite/spring-boot-prometheus)
+  Apply the [prometheus.yml](prometheus.yml) file
