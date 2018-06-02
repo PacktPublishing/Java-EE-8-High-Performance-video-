@@ -47,9 +47,10 @@ The containers that download and install a server (the \*-ci-managed profiles) a
     This will change the version from the current one (e.g 5.0.0.172) to 5.0.0.174 for Payara testing purposes.
 
 
-**To run only a subset of the tests do at the top-level directory**:
+**To run a subset do at the top-level directory**:
 
 1. Install top level dependencies: ``mvn clean install -pl "metrics" -am``
 1. cd into desired module, e.g.: ``cd metrics/application-metrics``
 1. Run against desired server, e.g.: ``mvn clean package -P payara-micro-managed``
+1. cd into the target folder: ``cd target``
 1. Run the server e.g. Payara Micro: ``java -jar payara-micro-N.MMM*.jar --deploy application-metrics.war``
