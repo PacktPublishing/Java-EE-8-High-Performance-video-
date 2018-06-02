@@ -19,4 +19,4 @@ If you prefer a stand-alone installation or other comparable tools like [Squirre
 
 ## Video 8.5
 - [Spring Boot Prometheus](https://github.com/aboullaite/spring-boot-prometheus)
-  Apply the [prometheus.yml](prometheus.yml) file
+  Apply the [prometheus.yml](prometheus.yml) file to your Prometheus folder or call Prometheus with it unless you're able to use the demo with Docker Compose.
