@@ -15,7 +15,7 @@ If you prefer a stand-alone installation or other comparable tools like [Squirre
 - [Spring Boot Metrics Dropwizard](spring-boot-metrics-dropwizard) a [Dropwizard](https://www.dropwizard.io/) Metrics example running on [Spring Boot](https://projects.spring.io/spring-boot/)
 
 ## Video 8.4
-- [MicroProfile 1.2 Metrics Samples](microprofile1.2-samples)
+- [MicroProfile 1.2 Samples](microprofile1.2-samples) for Metrics
 
 ## Video 8.5
 - [Spring Boot Prometheus](https://github.com/aboullaite/spring-boot-prometheus)
