@@ -92,6 +92,7 @@
      -->
     <modules>
       <module>cdi</module>
+      <module>concurrency</module>
     </modules>
 
     <dependencyManagement>

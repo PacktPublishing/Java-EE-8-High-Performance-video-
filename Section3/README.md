@@ -4,5 +4,4 @@
 
 - [JCache Examples](jcache-examples) for Video 3.4
 
-- Infinispan Tutorials: https://github.com/infinispan/infinispan-simple-tutorials/ for Video 3.5
-
+- [Infinispan Tutorials](https://github.com/infinispan/infinispan-simple-tutorials/) for Video 3.5
