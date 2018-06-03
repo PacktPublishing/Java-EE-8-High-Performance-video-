@@ -3,10 +3,8 @@
 Java EE Concurrency:
 https://github.com/keilw/javaee7-samples/tree/master/samples/concurrency
 
-The taskcreator in the Java EE repo:
-https://github.com/javaee/tutorial-examples/tree/master/concurrency/taskcreator
+- [Taskcreator](https://github.com/javaee/tutorial-examples/tree/master/concurrency/taskcreator) in the Java EE repo for Video 2.3
 
-CDI Async demo:
-https://github.com/keilw/javaee8-samples/tree/master/cdi/events-async
+- [CDI Async Demo](javaee8-samples/cdi/events-async) for Video 2.4
 
  
