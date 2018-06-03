@@ -12,6 +12,7 @@ Java EE 8 High Performance(video), published by Packt
 │     └── module-xyz <-- contains Maven module examples with a specific 
 │                               artifactId used in this section
 └── Section2
+        ...
 ```
 
 Have a great course!
