@@ -1,7 +1,7 @@
 parallel-streams-example
 ========================
 
-Example code for [Video 1.3](https://github.com/PacktPublishing/Java-EE-8-High-Performance-video-/tree/master/Volume1/Section1/Video_1.3) of [Java EE 8 High Performance](https://github.com/PacktPublishing/Java-EE-8-High-Performance-video-)
+Example code for [Video 1.3](../Video_1.3) of [Java EE 8 High Performance](https://github.com/PacktPublishing/Java-EE-8-High-Performance-video-)
 
 A deployable WAR file can be built with
 
