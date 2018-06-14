@@ -24,6 +24,8 @@ public class MyBenchmark {
     private Dashboard dashboard100;
     private Dashboard dashboard5000;
     private Dashboard dashboard10000;
+    private Dashboard dashboard0100k;
+    private Dashboard dashboard01Mio;
 
     @Setup
     public void setUp() {
@@ -31,6 +33,8 @@ public class MyBenchmark {
         dashboard100 = new Dashboard(makeContracts(100));
         dashboard5000 = new Dashboard(makeContracts(5000));
         dashboard10000 = new Dashboard(makeContracts(10000));
+        dashboard0100k = new Dashboard(makeContracts(100000));
+        dashboard01Mio = new Dashboard(makeContracts(1000000));
     }
 
     private List<Contract> makeContracts(int nContracts) {
@@ -67,7 +71,21 @@ public class MyBenchmark {
     public int totalSalesSequential10000() {
         return dashboard10000.totalSales();
     }
+    
+    @Benchmark
+    @BenchmarkMode(Mode.Throughput)
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public int totalSalesSequential0100k() {
+        return dashboard0100k.totalSales();
+    }
 
+    @Benchmark
+    @BenchmarkMode(Mode.Throughput)
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public int totalSalesSequential01Mio() {
+        return dashboard01Mio.totalSales();
+    }
+    
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
     @OutputTimeUnit(TimeUnit.MILLISECONDS)
@@ -96,6 +114,20 @@ public class MyBenchmark {
         return dashboard10000.parallelTotalSales();
     }
 
+    @Benchmark
+    @BenchmarkMode(Mode.Throughput)
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public int totalSalesParallel0100k() {
+        return dashboard0100k.parallelTotalSales();
+    }
+    
+    @Benchmark
+    @BenchmarkMode(Mode.Throughput)
+    @OutputTimeUnit(TimeUnit.MILLISECONDS)
+    public int totalSalesParallel01Mio() {
+        return dashboard01Mio.parallelTotalSales();
+    }
+    
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(".*" + MyBenchmark.class.getSimpleName() + ".*")
