@@ -13,3 +13,10 @@ Benchmarks based on [JMH](http://openjdk.java.net/projects/code-tools/jmh/) can 
 
     mvn clean package
     java -jar benchmarks/target/benchmarks.jar .*MyBenchmark.* -f 1
+    
+---
+**NOTE**
+
+If you don't select a particular method instead of the wildcard `MyBenchmark.*` tests may run quite **long**.
+
+---
