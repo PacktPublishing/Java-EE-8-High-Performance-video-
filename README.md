@@ -1,7 +1,7 @@
 # Java-EE-8-High-Performance [Video]
 Java EE 8 High Performance(video), published by Packt
 
-This is the code repository for [Java EE 8 High Performance [Video]](https://www.packtpub.com/application-development/java-ee-8-high-performance-video?utm_source=github&utm_medium=repository&utm_campaign=9781788834728), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
+This is the code repository for [Java EE 8 High Performance [Video]](https://www.packtpub.com/application-development/java-ee-8-high-performance-video?utm_source=github&utm_medium=repository&utm_campaign=9781788473613), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
 
 ## About the Video Course
 	Java EE 8 High Performance aims how to use Java EE for mission- or performance-critical applications. How to monitor the state and performance metrics of your program in a distributed environment. To make use of concurrency and multiple cores provided by modern processor architectures plus the support offered by Java 8. Common pitfalls and How you can scale your application to meet higher demand by adding cluster and load-balancing techniques. As well as optimization tools and frameworks like the Java Cache standard, Eclipse Collections or Javolution.
