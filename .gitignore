@@ -1,2 +1,51 @@
-/.project
-/.settings/
+### Maven ###
+target/
+!.mvn/wrapper/maven-wrapper.jar
+pom.xml.versionsBackup
+
+### Eclipse / STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.tern-project
+
+### IntelliJ IDEA ###
+!.idea
+.idea/*
+!.idea/copyright/
+
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### PisMockWebApp ###
+node_modules/
+node
+.vscode
+
+### Other ###
+bin/
+.factorypath
+*.class
+*.log
+logs
+log
+
+.DS_Store
+.springBeans
+
+cms-db-schema/liquibase.properties
+**/META-INF
+**/main/java/META-INF
