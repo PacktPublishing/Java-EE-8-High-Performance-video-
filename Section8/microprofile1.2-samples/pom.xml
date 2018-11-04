@@ -32,8 +32,8 @@
 
 		<!-- Micro implementation versions (these are downloaded and installed 
 			in these versions by Maven for the CI profiles) -->
-		<payara.version>5.182-SNAPSHOT</payara.version>
-		<payara.micro.version>5.182-SNAPSHOT</payara.micro.version>
+		<payara.version>5.183</payara.version>
+		<payara.micro.version>5.183</payara.micro.version>
 		<liberty.version>17.0.0.4</liberty.version>
 		<wildfly.version>2018.4.1</wildfly.version>
 
