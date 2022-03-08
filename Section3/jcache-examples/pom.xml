@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast</artifactId>
-			<version>4.0.5</version>
+			<version>5.1</version>
 		</dependency>
 
 		<!-- Terracotta EhCache (Maven Central -->
